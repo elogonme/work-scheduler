@@ -4,6 +4,7 @@ $(document).ready(function() {
     var dateToday = moment().format('dddd, MMMM Do YYYY'); // get todays date using moment.js
     var hourNow = moment().format('H'); // get hour now using moment.js
     console.log(dateToday);
+    console.log(hourNow);
     schedule = loadTaskList();
     console.log(schedule);
     outputTimeblocks();
@@ -30,17 +31,31 @@ $('#currentDay').text(dateToday).css('color', 'blue');
 
 // Function to output list of hours with tasks
 function outputTimeblocks(){
-    var $timeblock = $('<li>');
-    var $hour = $('<div>');
-    var $description = $('<textarea>');
-    var $saveButton = $('<button>');
-    $timeblock.addClass('list-group-item row time-block');
-    $hour.addClass('hour');
-    $description.addClass('description');
-    $saveButton.addClass('saveBtn');
-    $saveButton.html('<i class="far fa-save"></i>'); // add save button icon
-    $timeblock.append($hour, $description, $saveButton)
-    $('#time-blocks').append($timeblock);
+    for (var i = 9; i <= 18; i++) {
+        var $timeblock = $('<div>');
+        var hourText;
+        var $hour = $('<div>');
+        var $description = $('<textarea>');
+        var $saveButton = $('<button>');
+        
+        // format hour text depending on AM or PM
+        if (i < 13 ) {
+            hourText = i + 'AM';
+        } else {
+            hourText = i - 12 + 'PM';
+        }
+
+        $timeblock.addClass('row time-block my-1');
+        $hour.addClass('hour col-1 pt-2');
+        $hour.text(hourText);
+        $description.addClass('description col-8');
+        $saveButton.addClass('saveBtn');
+        $saveButton.html('<i class="fas fa-save"></i>'); // add save button icon
+    
+        $timeblock.append($hour, $description, $saveButton)
+        $('#time-blocks').append($timeblock);
+    }
+    
 }
 
 // Function to get data from local storage and return or return empty object
