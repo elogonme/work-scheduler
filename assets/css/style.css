@@ -4,6 +4,19 @@ body {
   line-height: 1;
 }
 
+h1 i {
+  color:  #06AED5;
+}
+
+.btn-save-all {
+  background-color:  #06AED5;
+  border-color:  #06AED5;
+}
+
+.btn-save-all, .btn-clear-all {
+  height: 2.3rem
+}
+
 textarea{
   background: transparent;
   border: none;
@@ -18,7 +31,8 @@ textarea{
   background-color: transparent;
   color: black;
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border-bottom: 8px solid black;
+  margin-bottom: 0.5rem;
 }
 
 .description{
@@ -49,12 +63,12 @@ textarea{
 
 .present {
   background-color: #ff6961;
-  color: white;
+  color:#000;
 }
 
 .future {
   background-color: #77dd77;
-  color: white;
+  color: #000;
 }
 
 .saveBtn {
@@ -69,6 +83,24 @@ textarea{
   font-size: 20px;
 }
 .saveBtn i:hover {
+  font-size: 30px;
+  transition: all .3s ease-in-out;
+  cursor: progress;
+}
+
+.clearBtn {
+  color: white;
+}
+
+.clearBtn:active, .clearBtn:focus, .clearBtn:active:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.clearBtn i {
+  font-size: 20px;
+}
+.clearBtn i:hover {
   font-size: 30px;
   transition: all .3s ease-in-out;
 }

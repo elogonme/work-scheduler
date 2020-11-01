@@ -5,12 +5,13 @@
 
 ## Installation
 
-Web Application can be accessed at [elogonme.github.io/work-scheduler/](https://elogonme.github.io/code-quiz/)
+Web Application can be accessed at [elogonme.github.io/work-scheduler/](https://elogonme.github.io/work-scheduler/)
 
 ## Usage
 
 The current day and list of work hours is displayed on initial app loading.
-Click on any hour to add task. Click on save button to save task.
+Click on any hour text area to add task. Click on save button to save task. Click on clear button to clear task.
+Click on Save all or Clear All buttons to save or clear all at once.
 Schedule will be saved in local storage and will be reloaded on next run of application.
 Each time block is color-coded to indicate whether it is in the past, present, or future.
 
@@ -18,7 +19,7 @@ Each time block is color-coded to indicate whether it is in the past, present, o
 
 ## Repository
 
-All the `code` is available at repository [github.com/elogonme/work-schedule](https://github.com/elogonme/password-generator)
+All web app `code` is available at repository [github.com/elogonme/work-scheduler](https://github.com/elogonme/work-scheduler)
 
 ## Credits
 

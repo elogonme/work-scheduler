@@ -20,16 +20,24 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
   <body>
-    <header class="jumbotron pt-4 pb-2">
-      <h1 class="display-3">Work Day Scheduler</h1>
+    <header class="jumbotron pt-2 pb-0">
+      <h1 class="display-5"><i class="fas fa-clipboard-list px-3"></i>Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
+    
+    <div class="container">
+      <div class="justify-content-center row" style="height: 41px">
+        <button id="save-all" class="btn btn-info col-2 mx-2 btn-save-all"><i class="fas fa-download mr-2"></i>Save all</button>
+        <button id="clear-all" class="btn btn-danger col-2 mx-2 btn-clear-all"><i class="fas fa-calendar-times mr-2"></i>Clear all</button>
+      </div>
+    </div>
     <div id="time-blocks" class="container">
       <!-- Timeblocks go here -->
     </div>
