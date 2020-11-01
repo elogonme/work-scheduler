@@ -3,38 +3,32 @@ $(document).ready(function() {
 
     var dateToday = moment().format('dddd, MMMM Do YYYY'); // get todays date using moment.js
     var hourNow = moment().format('H'); // get hour now using moment.js
-    
+
+    // Initialize app 
     // Set todays date to display on page in p #currentDay
     $('#currentDay').text(dateToday).css('color', 'blue');
-
-    
     // load day schedule from localStorage
     var schedule = loadTaskList();
-    console.log(schedule);
-    // display on the page day work hours list 
+    // display on the page day work hours list with tasks
     outputTimeblocks();
 
     // Add event listner for save buttons
+    // Depending wich save buttonis clicked get textarea and save under corresponding hour into local storage
     $('.saveBtn').on('click', function(){
-        console.log(this.value - 9, $(this).siblings()[1].innerHTML);
         schedule.tasks[this.value - 9] = $(this).siblings()[1].value; // Save clicked task to object tasks array
-        saveTaskList(schedule);
-        console.log(schedule.tasks);
+        saveTaskList(schedule); // Save task list to local storage
     });
-    // Depending wich save buttonis clicked get textarea and save under corresponding hour into loacl storage
-    // Refresh saved day work schedule
 
     // Additonal?
     // Clear each hour?
     // Clear all day?
     // Clear all stored data from local storage
-
-
-
-
+    
+    // -----------------------------------------------------------------------
     // Function to output list of hours with tasks
     function outputTimeblocks(){
         for (var i = 9; i <= 18; i++) {
+            // define some variables for creating elements in DOM
             var $timeblock = $('<div>');
             var hourText;
             var $hour = $('<div>');
@@ -55,7 +49,10 @@ $(document).ready(function() {
             // fill in day hours with task data.
             $description.text(schedule.tasks[i - 9]); // add task text loaded from tasks array in schedule object
             $saveButton.addClass('saveBtn col-1');
-            $saveButton.attr('value', i);
+            $saveButton.attr({
+                value: i,
+                title: 'save'
+            });
             $saveButton.html('<i class="fas fa-save"></i>'); // add save button icon
             // Each hour is color coded with past, present and future hours (grey, red, green)
             // Add color classes to different hours depending on time now
@@ -65,12 +62,12 @@ $(document).ready(function() {
                 $description.addClass('past');
             } else $description.addClass('present');
 
+            // Append each timeblock 
             $timeblock.append($hour, $description, $saveButton)
             $('#time-blocks').append($timeblock);
         }
-        
     }
-
+    // ----------------------------------------------------------------------------
     // Function to get data from local storage and return or return empty object
     function loadTaskList(){
         var schedule = JSON.parse(localStorage.getItem('schedule'));
@@ -86,7 +83,8 @@ $(document).ready(function() {
         schedule.date = dateToday;
         return schedule;
     }
-
+    // ---------------------------------------------------------------------------
+    // function to save tasks into local storage
     function saveTaskList(schedule) {
         localStorage.setItem('schedule', JSON.stringify(schedule));
     }
