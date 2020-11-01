@@ -1,12 +1,12 @@
 // Start script after page is loaded - all js code goes in here
 $(document).ready(function() {
 
-    var dateToday = moment().format('dddd, MMMM Do YYYY'); // get todays date using moment.js
+    var dateToday = moment().format('dddd, MMMM Do, YYYY'); // get todays date using moment.js
     var hourNow = moment().format('H'); // get hour now using moment.js
 
     // Initialize app 
     // Set todays date to display on page in p #currentDay
-    $('#currentDay').text(dateToday).css('color', 'blue');
+    $('#currentDay').text(dateToday).css('color', '#05a3c7');
     // load day schedule from localStorage
     var schedule = loadTaskList();
     // display on the page day work hours list with tasks
@@ -19,9 +19,19 @@ $(document).ready(function() {
         saveTaskList(schedule); // Save task list to local storage
     });
 
-    // Additonal?
+    // Additonal
+    // Save all hours tasks
+    $('#save-all').on('click', function() {
+        // Get task description from each hour and save to schedule tasks array
+        $.each($('.time-block textarea'), function(i, element){
+            schedule.tasks[i] = element.value;
+        });
+        // Save updated schedule to local storage
+        saveTaskList(schedule);
+    });
     // Clear each hour?
     // Clear all day?
+    
     // Clear all stored data from local storage
     
     // -----------------------------------------------------------------------

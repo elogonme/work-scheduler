@@ -4,6 +4,19 @@ body {
   line-height: 1;
 }
 
+h1 i {
+  color:  #06AED5;
+}
+
+.btn-save-all {
+  background-color:  #06AED5;
+  border-color:  #06AED5;
+}
+
+.btn-save-all, .btn-clear-all {
+  height: 2.3rem
+}
+
 textarea{
   background: transparent;
   border: none;
@@ -18,7 +31,8 @@ textarea{
   background-color: transparent;
   color: black;
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border-bottom: 8px solid black;
+  margin-bottom: 0.5rem;
 }
 
 .description{
