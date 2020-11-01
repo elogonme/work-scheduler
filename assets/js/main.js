@@ -30,9 +30,17 @@ $(document).ready(function() {
         saveTaskList(schedule);
     });
     // Clear each hour?
-    // Clear all day?
-    
-    // Clear all stored data from local storage
+
+    // Clear all schedule tasks and clear all stored data from local storage
+    $('#clear-all').on('click', function() {
+        // Get task description from each hour and save to schedule tasks array
+        $.each($('.time-block textarea'), function(i, element){
+            schedule.tasks[i] = '';
+            element.value = '';
+        });
+        // Save updated schedule to local storage
+        saveTaskList(schedule);
+    });
     
     // -----------------------------------------------------------------------
     // Function to output list of hours with tasks
