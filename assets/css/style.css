@@ -53,6 +53,7 @@ textarea{
 .hour {
   background-color: #ffffff;
   color: #000000;
+  font-size: 1rem;
   border-top: 1px dashed #000000;
 }
 
@@ -86,3 +87,15 @@ textarea{
   font-size: 30px;
   transition: all .3s ease-in-out;
 }
+
+.clearBtn {
+  color: white;
+}
+.clearBtn i {
+  font-size: 20px;
+}
+.clearBtn i:hover {
+  font-size: 30px;
+  transition: all .3s ease-in-out;
+}
+
