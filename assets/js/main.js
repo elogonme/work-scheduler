@@ -19,11 +19,14 @@ $(document).ready(function() {
         saveTaskList(schedule); // Save task list to local storage
     });
 
+    // Add event listner for clear buttons
     // Depending which clear button is clicked clear textarea and save under corresponding hour into local storage
     $('.clearBtn').on('click', function(){
+        console.log('clicked');
         schedule.tasks[this.value - 9] = ''; // Clear clicked task and save to object tasks array
         saveTaskList(schedule); // Save task list to local storage
-        outputTimeblocks(); // Refresh timeblocks on page
+        $(this).siblings()[1].value = ''; // Clear text in description textarea
+        console.log('output done');
     });
 
     // Additonal
