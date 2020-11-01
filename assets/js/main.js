@@ -66,11 +66,13 @@ $(document).ready(function() {
             var $clearButton = $('<button>');
             
             // format hour text depending on AM or PM
-            if (i < 13 ) {
+            if (i < 12 ) {
                 hourText = i + 'AM';
+            } else if (i === 12){
+                hourText = i + 'PM';
             } else {
                 hourText = i - 12 + 'PM';
-            }
+            };
             // add on each hour textarea for input and button to save with all bootstrap classes for styling
             $timeblock.addClass('row time-block my-1');
             $hour.addClass('hour col-1 pt-2 px-1');
