@@ -1,5 +1,5 @@
 
-## Work Day Scheduler            ![Bootstrap](https://img.shields.io/badge/Powered%20By-gray) <img src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> <img src="https://img.shields.io/badge/jquery%20-%230769AD.svg?&style=for-the-badge&logo=jquery&logoColor=white"/>
+# Work Day Scheduler            ![Bootstrap](https://img.shields.io/badge/Powered%20By-gray) <img src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> <img src="https://img.shields.io/badge/jquery%20-%230769AD.svg?&style=for-the-badge&logo=jquery&logoColor=white"/>
 
 **Work Day Scheduler** - a simple calendar application that allows a user to save events for each hour of the day.
 
